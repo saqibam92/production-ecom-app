@@ -8,14 +8,6 @@ import Stripe from "stripe";
 import helmet from "helmet";
 import mongoSanitize from "express-mongo-sanitize";
 
-// routes
-// routes import
-import testRoutes from "./routes/testRoutes.js";
-import userRoutes from "./routes/userRoutes.js";
-import productRoutes from "./routes/productRoutes.js";
-import categoryRoutes from "./routes/categoryRoutes.js";
-import orderRoutes from "./routes/orderRoutes.js";
-
 // dotenv  config
 dotenv.config();
 
@@ -43,6 +35,14 @@ app.use(morgan("dev")); // log requests to the console
 app.use(express.json()); // parse incoming requests with JSON payloads
 app.use(cors());
 app.use(cookieParser());
+
+// routes
+// routes import
+import testRoutes from "./routes/testRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
+import productRoutes from "./routes/productRoutes.js";
+import categoryRoutes from "./routes/categoryRoutes.js";
+import orderRoutes from "./routes/orderRoutes.js";
 
 // use routes
 app.use("/api/v1", testRoutes);
